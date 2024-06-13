@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="OUTSEQUENCE_SOAP_OBTENER_LICENCIAS" trace="disable" xmlns="http://ws.apache.org/ns/synapse" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <log description="entra" level="custom">
+        <property name="Entra" value="Entra en la OS"/>
+    </log>
+    <log description="BODY" level="custom">
+        <property expression="$body" name="BODY"/>
+    </log>
+    <log description="STATUS CODE" level="custom">
+        <property expression="get-property('axis2', 'HTTP_SC')" name="STATUS CODE"/>
+    </log>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_OUTS_IN.xml"/>
+    <switch source="get-property('axis2', 'HTTP_SC')">
+        <case regex="200">
+            <log description="entra" level="custom">
+                <property name="Entra" value="Entra en case 200"/>
+            </log>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_OUTS_OUT.xml"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_MONITORIZAR_RESPONSE_SOAP.xml"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PREPARE_RESPONSE_SOAP.xml"/>
+        </case>
+        <default>
+            <log description="entra" level="custom">
+                <property name="Entra" value="Entra en la default"/>
+            </log>
+            <property name="HTTP_SC" scope="default" type="STRING" value="get-property('axis2', 'HTTP_SC')"/>
+            <property name="ErroresBackend" scope="default" type="STRING" value="${cpv.os.ValorBackend}"/>
+            <property expression="//SOAP-ENV:Fault/faultstring" name="DETAIL" scope="default" type="STRING"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_GENERICA_ERRORES.xml"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_OUTS_OUT.xml"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_MONITORIZAR_FAULT_SOAP.xml"/>
+            <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PREPARE_RESPONSE_SOAP.xml"/>
+        </default>
+    </switch>
+    <respond/>
+</sequence>

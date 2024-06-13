@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FAULTSEQUENCE_SOAP_OBTENER_LICENCIAS" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="entra" level="custom">
+        <property name="Entra" value="Entra en la FS"/>
+    </log>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_FAULT_IN.xml"/>
+    <property name="ErroresBackend" scope="default" type="STRING" value="${cpv.fs.ValorBackend}"/>
+    <property name="DETAIL" scope="default" type="STRING" value="${cpv.os.Detail}"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_GENERICA_ERRORES.xml"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_FAULT_OUT.xml"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_MONITORIZAR_FAULT_SOAP.xml"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PREPARE_RESPONSE_SOAP.xml"/>
+    <respond/>
+</sequence>

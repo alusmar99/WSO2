@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="INT_PRV_SCSP_ObtenerLicencias" startOnLoad="true" transports="http https">
+    <target>
+        <inSequence>
+            <sequence key="INSEQUENCE_SOAP_OBTENER_LICENCIAS"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="OUTSEQUENCE_SOAP_OBTENER_LICENCIAS"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FAULTSEQUENCE_SOAP_OBTENER_LICENCIAS"/>
+        </faultSequence>
+    </target>
+    <publishWSDL key="gov:servicios/SOAP/SCSP/ServiciosScsp/v1.2.1/wsdls/Licencias_v01r00.wsdl" preservePolicy="false"/>
+    <parameter name="disableOperationValidation">true</parameter>
+    <parameter name="useOriginalwsdl">true</parameter>
+</proxy>

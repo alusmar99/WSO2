@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<artifacts>
+    <artifact name="INT_PRV_SCSP_ObtenerLicencias" groupId="es.juntadeandalucia.cma.interoperabilidad.proxy-service" version="1.2.1" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/INT_PRV_SCSP_ObtenerLicencias.xml</file>
+    </artifact>
+    <artifact name="INSEQUENCE_SOAP_OBTENER_LICENCIAS" groupId="es.juntadeandalucia.cma.interoperabilidad.sequence" version="1.2.1" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/INSEQUENCE_SOAP_OBTENER_LICENCIAS.xml</file>
+    </artifact>
+    <artifact name="OUTSEQUENCE_SOAP_OBTENER_LICENCIAS" groupId="es.juntadeandalucia.cma.interoperabilidad.sequence" version="1.2.1" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OUTSEQUENCE_SOAP_OBTENER_LICENCIAS.xml</file>
+    </artifact>
+    <artifact name="FAULTSEQUENCE_SOAP_OBTENER_LICENCIAS" groupId="es.juntadeandalucia.cma.interoperabilidad.sequence" version="1.2.1" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FAULTSEQUENCE_SOAP_OBTENER_LICENCIAS.xml</file>
+    </artifact>
+</artifacts>

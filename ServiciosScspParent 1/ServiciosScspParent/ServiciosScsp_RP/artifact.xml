@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<artifacts>
+    <artifact name="ServScspEP_xml" groupId="es.juntadeandalucia.cma.interoperabilidad.resource" version="1.2.1" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SOAP/SCSP/ServiciosScsp/v1.2.1/endpoints/ServScspEP.xml</file>
+            <path>/_system/governance/servicios/SOAP/SCSP/ServiciosScsp/v1.2.1/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="Licencias_v01r00_wsdl" groupId="es.juntadeandalucia.cma.interoperabilidad.resource" version="1.2.1" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SOAP/SCSP/ServiciosScsp/v1.2.1/wsdls/Licencias_v01r00.wsdl</file>
+            <path>/_system/governance/servicios/SOAP/SCSP/ServiciosScsp/v1.2.1/wsdls</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="Licencias_v01r00_xsd" groupId="es.juntadeandalucia.cma.interoperabilidad.resource" version="1.2.1" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SOAP/SCSP/ServiciosScsp/v1.2.1/xsd/Licencias_v01r00.xsd</file>
+            <path>/_system/governance/servicios/SOAP/SCSP/ServiciosScsp/v1.2.1/xsd</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="ServScspEP" xmlns="http://ws.apache.org/ns/synapse">
+    <address uri="${rpv.ep.ServScspEP}">
+        <timeout>
+            <duration>60000</duration>
+        </timeout>
+        <suspendOnFailure>
+            <initialDuration>1000</initialDuration>
+            <progressionFactor>2.0</progressionFactor>
+            <maximumDuration>64000</maximumDuration>
+        </suspendOnFailure>
+        <markForSuspension>
+            <errorCodes>101504,101505,101500</errorCodes>
+            <retriesBeforeSuspension>3</retriesBeforeSuspension>
+            <retryDelay>10</retryDelay>
+        </markForSuspension>
+    </address>
+</endpoint>

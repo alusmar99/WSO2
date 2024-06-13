@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="INSEQUENCE_SOAP_OBTENER_LICENCIAS" trace="disable">
+    <log description="entra" level="custom">
+        <property name="Entra" value="Entra en la IS"/>
+    </log>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_INS_IN.xml"/>
+    <property name="NOMBRE" scope="default" type="STRING" value="SCSP"/>
+    <property name="DESTINO" scope="default" type="STRING" value="${rpv.ep.ServScspEP}"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_MONITORIZAR_REQUEST_SOAP.xml"/>
+    <property expression="local-name($body/*[1])" name="operacion" scope="default" type="STRING"/>
+    <property expression="get-property('operacion')" name="OPERACION" scope="default" type="STRING"/>
+    <sequence key="gov:servicios/UtilidadesComunes/sequences/SEQ_COMUN_PROFILING_INS_OUT.xml"/>
+    <send>
+        <endpoint key="gov:/servicios/SOAP/SCSP/ServiciosScsp/v1.2.1/endpoints/ServScspEP.xml"/>
+    </send>
+</sequence>
